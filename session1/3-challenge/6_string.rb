@@ -6,5 +6,20 @@
 #
 
 def odds_and_evens(string, return_odds)
-
+  size = string.size
+  arr = []
+  size.times do |s|
+    if return_odds
+      if s.odd?
+        arr << string[s]
+      end
+    else
+      if s.even?
+        arr << string[s]
+      end 
+    end
+  end
+  puts arr.join("")
+  return arr.join("")
 end
+odds_and_evens("abcdefg", true)
