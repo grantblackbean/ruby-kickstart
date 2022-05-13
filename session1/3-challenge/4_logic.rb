@@ -10,9 +10,25 @@
 # grade(15, true)   # => "B"
 
 # <10 books => D, 10..20 books => C, >20 book =>B
+require 'benchmark'
 
 
 def grade(num_books, has_read_books)
+  Benchmark.bm(20) do |bm|
+    bm.report("My Version") do
+      grades = {0 => 'D', 1 => 'C', 2 => 'B', 3 => 'A'}
+      case num_books
+        when num_books = 0..9
+          grade_count = 0
+        when num_books = 10..20
+          grade_count = 1
+        else
+          grade_count = 2
+      end
+      if has_read_books == true
+        grade_count += 1
+      end
+      grades[grade_count]
+    end
+  end
 end
-
-
