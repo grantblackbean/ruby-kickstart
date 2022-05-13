@@ -8,3 +8,5 @@ gem 'helloworld'
 gem 'sinatra'
 gem 'nokogiri'
 gem 'capybara'
+
+gem "benchmark", "~> 0.2.0"
