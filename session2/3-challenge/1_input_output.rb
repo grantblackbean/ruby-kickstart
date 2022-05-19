@@ -8,6 +8,13 @@
 # "11\n7\n18\n" to standard output.
 
 def sum_difference_product
-  # your code goes here
-  
+  i = gets.chomp
+  if i.match(/\d \d/)
+    arr = i.split(" ")
+    puts arr[0].to_i + arr[1].to_i
+    puts arr[0].to_i - arr[1].to_i
+    puts arr[0].to_i * arr[1].to_i
+  else
+    puts "no mas!"
+  end  
 end

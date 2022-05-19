@@ -14,3 +14,12 @@
 #
 # mod_three [0,1,2,3,4,5,6,7] # => [1, 2, 1, 2, 1]
 
+def mod_three(arr)
+  vals = []
+  mods = arr.select { |n| n % 3 != 0 }
+  mods.each { |m| vals << m % 3 }
+  puts vals
+  return vals
+end
+
+mod_three([2, 3, 6, 9, 10, 11, 13])
