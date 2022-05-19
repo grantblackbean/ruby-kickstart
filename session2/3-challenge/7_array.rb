@@ -7,5 +7,21 @@
 # Examples
 # alternate_words("Lorem ipsum dolor sit amet.")  # => ["Lorem", "dolor", "amet"]
 # alternate_words("Can't we all get along?")      # => ["Can't", "all", "along"]
-# alternate_words("Elementary, my dear Watson!")  # => ["Elementary", "dear"]
+# alternate_words("Can't we all get along?")  # => ["Elementary", "dear"]
 
+def alternate_words(str)
+  the_str = str.gsub(/[^a-zA-Z'’]/, " ")
+  arr = the_str.split(" ")
+  alternates = []
+  z = 0
+  while z <= arr.length
+    if arr[z] != ""
+      alternates << arr[z]
+    end
+    z += 2
+  end
+  return alternates.compact
+end
+
+alternate_words("Elementary, my dear Watson!")
+alternate_words("Lorem ipsum dolor sit amet.")
